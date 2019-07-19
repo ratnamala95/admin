@@ -6,6 +6,7 @@ if ($use_username) {
 		'value' => set_value('username'),
 		'maxlength'	=> $this->config->item('username_max_length', 'tank_auth'),
 		'size'	=> 30,
+		'class' => 'form-control'
 	);
 }
 $email = array(
@@ -14,6 +15,7 @@ $email = array(
 	'value'	=> set_value('email'),
 	'maxlength'	=> 80,
 	'size'	=> 30,
+	'class' => 'form-control'
 );
 $password = array(
 	'name'	=> 'password',
@@ -21,6 +23,7 @@ $password = array(
 	'value' => set_value('password'),
 	'maxlength'	=> $this->config->item('password_max_length', 'tank_auth'),
 	'size'	=> 30,
+	'class' => 'form-control'
 );
 $confirm_password = array(
 	'name'	=> 'confirm_password',
@@ -28,11 +31,13 @@ $confirm_password = array(
 	'value' => set_value('confirm_password'),
 	'maxlength'	=> $this->config->item('password_max_length', 'tank_auth'),
 	'size'	=> 30,
+	'class' => 'form-control'
 );
 $captcha = array(
 	'name'	=> 'captcha',
 	'id'	=> 'captcha',
 	'maxlength'	=> 8,
+	'class' => 'form-control'
 );
 ?>
 
@@ -117,13 +122,16 @@ $captcha = array(
 					<p>Enter the code exactly as it appears:</p>
 					<?php echo $captcha_html; ?>
 
+					<div class="form-group has-feedback">
 
-					<?php echo form_label('Confirmation Code', $captcha['id']); ?>
-					<?php echo form_input($captcha); ?>
-					<?php echo form_error($captcha['name']); ?>
-				<?php }
+						<?php echo form_label('Confirmation Code', $captcha['id']); ?>
+						<?php echo form_input($captcha); ?>
+						<?php echo form_error($captcha['name']); ?>
+					<?php }
 					} ?>
-					<?php echo form_submit('register', 'Register'); ?>
+					</div>
+
+					<?php echo form_submit(array('register','class' => 'btn btn-primary btn-flat'), 'Register'); ?>
 					<?php echo form_close(); ?>
 			</div>
 

@@ -5,6 +5,7 @@ $login = array(
 	'value' => set_value('login'),
 	'maxlength'	=> 80,
 	'size'	=> 30,
+	'class' => 'form-control'
 );
 if ($this->config->item('use_username', 'tank_auth')) {
 	$login_label = 'Email or login';
@@ -53,7 +54,7 @@ if ($this->config->item('use_username', 'tank_auth')) {
 		</div>
 
 		<div class="form-group has-feedback">
-			<?php echo form_submit('reset', 'Get a new password'); ?>
+			<?php echo form_submit(array('reset','class'=>'btn btn-primary btn-flat'), 'Get a new password'); ?>
 			<?php echo form_close(); ?>
 		</div>
 
