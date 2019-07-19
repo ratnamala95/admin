@@ -76,6 +76,7 @@ $captcha = array(
 		<div class="form-group has-feedback">
 			<?php echo form_label('Username', $username['id']); ?>
 			<?php echo form_input($username); ?>
+			<span class="glyphicon glyphicon-user form-control-feedback"></span>
 			<?php if ($use_username) { ?>
 			<?php echo form_error($username['name']); ?><?php echo isset($errors[$username['name']])?$errors[$username['name']]:''; ?>
 			<?php } ?>
@@ -84,18 +85,21 @@ $captcha = array(
 		<div class="form-group has-feedback">
 			<?php echo form_label('Email Address', $email['id']); ?>
 			<?php echo form_input($email); ?>
+			<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 			<?php echo form_error($email['name']); ?><?php echo isset($errors[$email['name']])?$errors[$email['name']]:''; ?>
 		</div>
 
 		<div class="form-group has-feedback">
 			<?php echo form_label('Password', $password['id']); ?>
 			<?php echo form_password($password); ?>
+			<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 			<?php echo form_error($password['name']); ?>
 		</div>
 
 		<div class="form-group has-feedback">
 			<?php echo form_label('Confirm Password', $confirm_password['id']); ?>
 			<?php echo form_password($confirm_password); ?>
+			<span class="glyphicon glyphicon-log-in form-control-feedback"></span>
 			<?php echo form_error($confirm_password['name']); ?>
 		</div>
 
