@@ -123,11 +123,11 @@ $captcha = array(
     	} ?>
 
 			<div class="form-group has-feedback ">
+				<?php echo form_checkbox($remember); ?>
 					<?php echo form_label('Remember me', $remember['id']); ?>
-					<?php echo form_checkbox($remember); ?>
 			</div>
 			<div class="form-group has-feedback">
-				<?php echo form_submit(array('class'=>'btn btn-primary btn-flat',
+				<?php echo form_submit(array('class'=>'btn btn-primary btn-block btn-flat',
 				'type'=>'submit'), 'Sign in'); ?>
 			</div>
 			<?php echo form_close(); ?>
