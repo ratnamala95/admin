@@ -5,7 +5,7 @@
     <span aria-hidden="true">×</span>
   </button>
   <i class="fa fa-info mx-2"></i>
-  <strong>How you doin'?</strong> I'm just a friendly, good-looking notification message and I come in all the colors you can see below. Pretty cool, huh? </div>
+  <strong>Logged In!!</strong></div>
 <div class="main-content-container container-fluid px-4">
   <!-- Page Header -->
   <div class="page-header row no-gutters py-4 mb-3 border-bottom">

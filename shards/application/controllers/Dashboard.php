@@ -78,5 +78,17 @@
       $this->aauth->logout();
       redirect('Dashboard/login_page');
     }
+
+    /**
+    *forgot password
+    **/
+
+    function forgot_password(){
+
+    }
+
+    public function get_user() {
+        print_r($this->aauth->get_user());
+    }
   }
  ?>
