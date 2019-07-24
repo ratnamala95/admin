@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Log In!</title>
+    <title>Forgot password!</title>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
@@ -20,24 +20,16 @@
           </div>
         </div>
         <div class="main-login main-center">
-          
-          <form class="form-horizontal" action="<?php echo site_url('Dashboard/login'); ?>" method="post">
+          <form class="form-horizontal" action="<?php echo site_url('Dashboard/forgot_password'); ?>" method="post">
             <div class="form-group col input-group">
               <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" name="uname" value="" placeholder="Enter username">
+              <input type="email" class="form-control" name="email" value="" placeholder="Enter email">
             </div>
             <div class="form-group col input-group">
-              <span class="input-group-addon"><i class="fa fa-lock fa" aria-hidden="true"></i></span>
-              <input type="password" class="form-control" name="pass" value="" placeholder="Enter password">
+              <input type="submit" class="btn btn-primary btn-flat btn-block login-button" name="" value="Proceed">
             </div>
-            <div class="form-group col input-group">
-              <input type="submit" class="btn btn-primary btn-flat btn-block login-button" name="" value="Login">
-            </div>
-            <a href="<?php echo site_url('Dashboard/forgot_page') ?>" style="text-align:left; font-size:11px; margin-left:-14px;">Forgot password</a>
-            <a href="<?php echo site_url('Dashboard/register'); ?>" style="text-align:right; font-size:11px;">Register</a>
-            <div class="login-left">
-            </div>
-            <div class="login-left">
+            <div class="login-left col-2">
+              <a href="<?php echo site_url('Dashboard/register'); ?>" style="text-align:left;margin-left:-14px;">Register</a>
             </div>
             <div class="login-right col-6">
             </div>

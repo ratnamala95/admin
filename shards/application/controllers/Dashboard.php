@@ -83,12 +83,44 @@
     *forgot password
     **/
 
+    function forgot_page(){
+      $this->load->view('layout/forgotpass');
+    }
+
     function forgot_password(){
-
+      $email = $_POST['email'];
+      if($this->aauth->remind_password($email)){
+        redirect('Dashboard/login_page');
+      }else{
+        $this->aauth->print_errors();
+      }
     }
 
-    public function get_user() {
-        print_r($this->aauth->get_user());
+    function reset($link){
+      $this->aauth->reset_password($link);
     }
+
+    /*
+    *change password when user is logged in!
+    */
+
+    function change_password(){
+      $data['admin_data'] = $this->checkAccess();
+      $this->load->view('layout/changepass',$data);
+    }
+
+    function change_pass(){
+      $data = $this->checkAccess();
+      $id = $data['id'];
+      $user = $data['username'];
+      $email = $data['email'];
+      $password = $_POST['passwd'];
+      if($this->aauth->update_user($id,$email,$password,$user)){
+        redirect('Dashboard');
+      } else {
+        $this->aauth->print_errors();
+      } /* email, password , username*/
+    }
+
   }
  ?>

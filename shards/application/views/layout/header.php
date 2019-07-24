@@ -96,7 +96,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="<?php echo site_url('Dashboard'); ?>">
+                <a class="nav-link " href="<?php echo site_url('Dashboard/change_password'); ?>">
                   <i class="material-icons">settings</i>
                   <span>Settings</span>
                 </a>

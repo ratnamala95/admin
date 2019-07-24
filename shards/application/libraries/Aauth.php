@@ -125,13 +125,13 @@ class Aauth {
 
 		$this->cache_perm_id		= array();
 		$this->cache_group_id		= array();
-		
+
 		// Pre-Cache IDs
 		$this->precache_perms();
 		$this->precache_groups();
 
 	}
-	
+
 	/**
 	 * precache_perms() caches all permission IDs for later use.
 	 */
@@ -143,7 +143,7 @@ class Aauth {
 			$this->cache_perm_id[$key]	= $row->id;
 		}
 	}
-	
+
 	/**
 	 * precache_groups() caches all group IDs for later use.
 	 */
@@ -155,7 +155,7 @@ class Aauth {
 			$this->cache_group_id[$key]	= $row->id;
 		}
 	}
-	
+
 	########################
 	# Login Functions
 	########################
@@ -510,6 +510,7 @@ class Aauth {
 	 */
 	public function remind_password($email){
 
+
 		$query = $this->aauth_db->where( 'email', $email );
 		$query = $this->aauth_db->get( $this->config_vars['users'] );
 
@@ -529,12 +530,15 @@ class Aauth {
 			if(isset($this->config_vars['email_config']) && is_array($this->config_vars['email_config'])){
 				$this->CI->email->initialize($this->config_vars['email_config']);
 			}
-
 			$this->CI->email->from( $this->config_vars['email'], $this->config_vars['name']);
 			$this->CI->email->to($row->email);
 			$this->CI->email->subject($this->CI->lang->line('aauth_email_reset_subject'));
-			$this->CI->email->message($this->CI->lang->line('aauth_email_reset_text') . site_url() . $this->config_vars['reset_password_link'] . $ver_code );
-			$this->CI->email->send();
+			$this->CI->email->message($this->CI->lang->line('aauth_email_reset_text').site_url().$this->config_vars['reset_password_link'] . $ver_code );
+
+			$this->CI->email->send(FALSE);
+			// $this->CI->email->print_debugger(array('headers', 'subject', 'body' ));
+
+// Will only print the email headers, excluding the message subject and body
 
 			return TRUE;
 		}
